@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalenderActivity"
+    tools:ignore="HardcoreText">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+<!--        Tool bar on top-->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="?attr/colorPrimary"
+            android:backgroundTint="#2894ff"
+            android:elevation="4dp" />
+
+<!--    Calender-->
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:firstDayOfWeek="1"
+            android:maxDate="07/20/2050"
+            android:minDate="07/20/2022"
+
+            android:theme="@style/CalenderViewCustom"
+            android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"
+            />
+
+<!--    Add Task button-->
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_task"
+        android:backgroundTint="@color/blue"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        />
+
+<!--    View Task-->
+    <Button
+        android:id="@+id/view_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="63dp"
+        android:backgroundTint="@color/blue"
+        android:text="@string/view_tasks" />
+
+        <Button
+            android:id="@+id/incoming_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/calendarView"
+            android:layout_centerInParent="true"
+            android:backgroundTint="@color/blue"
+            android:text="Incoming Activity"
+            android:textAllCaps="false" />
+
+</RelativeLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/nav_drawer_menu"/>
+</androidx.drawerlayout.widget.DrawerLayout>

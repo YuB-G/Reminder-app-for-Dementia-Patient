@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".addPage">
+    <!--Tool Bar on Top-->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="?attr/colorPrimary"
+        android:backgroundTint="#2894ff"
+        android:elevation="4dp" />
+
+    <!--Time Picker-->
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:timePickerMode="spinner"
+         />
+
+    <!--Activity    -->
+    <LinearLayout
+        android:id="@+id/activity_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/timePicker">
+        <!--Activity Text-->
+        <TextView
+            android:id="@+id/Act_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="@string/Set_activity"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+        <!--Set Activity-->
+        <EditText
+            android:id="@+id/set_activity"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="50dp"
+            android:autofillHints="nothing"
+            android:hint="@string/Enter_act"
+            android:inputType="textAutoCorrect"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+    </LinearLayout>
+    <!--Tips-->
+    <LinearLayout
+        android:id="@+id/tips_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_row"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        <!--Tips Text-->
+        <TextView
+            android:id="@+id/Tips_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:text="@string/Set_tips"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+        <!--Set Tips-->
+        <EditText
+            android:id="@+id/set_tips"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="50dp"
+            android:autofillHints="nothing"
+            android:hint="@string/Enter_tips"
+            android:inputType="textAutoCorrect"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <!--Choose Picture Text-->
+    <TextView
+        android:layout_marginTop="12dp"
+        android:id="@+id/tv_take_pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tips_row"
+        android:layout_centerInParent="true"
+        android:padding="5dp"
+        android:text="Click here to choose the picture"
+        android:textColor="#333333"
+        android:textSize="18sp" />
+    <!--Image View-->
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_below="@id/tv_take_pic"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_centerInParent="true"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_gallery_black_24dp"/>
+
+    <!--Done Button-->
+    <Button
+        android:id="@+id/addDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv"
+        android:layout_centerInParent="true"
+        android:backgroundTint="@color/blue"
+        android:layout_marginTop="30dp"
+        android:text="@string/Set_done"
+         />
+    <!--Back Button-->
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/addDone"
+        android:layout_marginTop="20dp"
+
+        android:text="Back"
+         />
+
+</RelativeLayout>
